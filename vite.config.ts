@@ -22,4 +22,12 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
+    build: {
+        outDir: 'public/build', // 👉 hasil build taruh sini
+        emptyOutDir: true, // 👉 hapus isi sebelumnya dulu
+        manifest: true, // 👉 ini penting untuk Laravel-Vite Plugin
+        rollupOptions: {
+            input: ['resources/css/app.css', 'resources/js/app.tsx'], // 👈 pastikan inputnya cocok
+        },
+    },
 });
