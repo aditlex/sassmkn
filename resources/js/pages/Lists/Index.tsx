@@ -32,8 +32,6 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-// ...import tetap sama
-
 export default function ListsIndex({ lists, flash }: Props) {
     const [showToast, setShowToast] = useState(false);
     const [toastMessage, setToastMessage] = useState('');

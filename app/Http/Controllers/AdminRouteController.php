@@ -24,7 +24,7 @@ class AdminRouteController extends Controller
     }
 
 
-    // 🟩 Simpan list baru (tanpa user_id)
+    // Simpan list baru 
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -37,7 +37,7 @@ class AdminRouteController extends Controller
         return redirect()->route('Admin/Users')->with('success', 'List created successfully!');
     }
 
-    // 🟨 Update list
+    // Update list
     public function update(Request $request, TaskList $list)
     {
         $validated = $request->validate([
@@ -50,7 +50,7 @@ class AdminRouteController extends Controller
         return redirect()->route('Admin/Users')->with('success', 'List updated successfully!');
     }
 
-    // 🟥 Hapus list
+    // Hapus list
     public function destroy(TaskList $list)
     {
         $list->delete();

@@ -13,7 +13,7 @@ class ListController extends Controller
      */
     public function index()
     {
-        // Ambil semua list, tanpa filter user_id
+        // Ambil semua list
         $lists = TaskList::with('tasks')->get();
 
         return Inertia::render('Lists/Index', [
