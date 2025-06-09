@@ -93,7 +93,6 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
         put,
         processing,
         reset,
-        delete: destroy,
     } = useForm({
         title: '',
         description: '',
