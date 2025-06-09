@@ -122,22 +122,6 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
         }
     };
 
-    const handleEdit = (task: Task) => {
-        setEditingTask(task);
-        setData({
-            title: task.title,
-            description: task.description || '',
-            due_date: task.due_date || '',
-            list_id: task.list_id.toString(),
-            is_completed: task.is_completed,
-        });
-        setIsOpen(true);
-    };
-
-    const handleDelete = (taskId: number) => {
-        destroy(route('tasks.destroy', taskId));
-    };
-
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         router.get(
