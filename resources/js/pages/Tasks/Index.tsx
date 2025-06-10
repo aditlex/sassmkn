@@ -15,6 +15,7 @@ interface Task {
     title: string;
     description: string | null;
     is_completed: boolean;
+    link: string;
     due_date: string | null;
     list_id: number;
     list: {
@@ -96,6 +97,7 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
     } = useForm({
         title: '',
         description: '',
+        link: '',
         due_date: '',
         list_id: '',
         is_completed: false as boolean,
@@ -231,6 +233,16 @@ export default function TasksIndex({ tasks, lists, filters, flash }: Props) {
                                         </SelectContent>{' '}
                                     </Select>{' '}
                                 </div>{' '}
+                                 <div className="space-y-2">
+                                    <Label htmlFor="title">Link Projek</Label>{' '}
+                                    <Input
+                                        id="link"
+                                        value={data.link}
+                                        onChange={(e) => setData('link', e.target.value)}
+                                        required
+                                        className="focus:ring-primary focus:ring-2"
+                                    />
+                                </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="due_date">Due Date</Label>{' '}
                                     <Input
